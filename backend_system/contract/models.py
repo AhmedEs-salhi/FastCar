@@ -3,7 +3,7 @@ from client.models import Client
 from agent.models import Agent
 from vehicule.models import Vehicule
 
-class Contrat(models.Model):
+class Contract(models.Model):
     MODE_PAIEMENT_CHOICES = [
         ('Espèce', 'Espèce'),
         ('Carte', 'Carte'),
@@ -16,7 +16,7 @@ class Contrat(models.Model):
     mode_paiement = models.CharField(max_length=20, choices=MODE_PAIEMENT_CHOICES)
     client = models.ForeignKey(Client, on_delete=models.CASCADE)
     agent = models.ForeignKey(Agent, on_delete=models.SET_NULL, null=True)
-    vehicule = models.ForeignKey(Vehicule, on_delete=models.PROTECT)
+    vehicule = models.ForeignKey(Vehicule, on_delete=models.PROTECT, null=True)
 
     def __str__(self):
         return f"Contrat #{self.id} - {self.client.nom} - {self.vehicule.matricule}"

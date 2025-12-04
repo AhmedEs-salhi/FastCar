@@ -37,6 +37,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    #Added Apps
+    'rest_framework',
+    'corsheaders',      
+    
     #My Apps
     'agent',
     'adresse',
@@ -44,6 +48,7 @@ INSTALLED_APPS = [
     'vehicule',
     'contract',
     'payment',
+    
 ]
 
 MIDDLEWARE = [
@@ -54,6 +59,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
 
 ROOT_URLCONF = 'backend_system.urls'
@@ -127,3 +133,6 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+#For the django_cors_headers app already installed and listed in INSTALLED_APPS
+CORS_ALLOW_ALL_ORIGINS = True
