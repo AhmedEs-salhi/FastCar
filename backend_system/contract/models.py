@@ -12,7 +12,7 @@ class Contract(models.Model):
 
     date_debut = models.DateField()
     date_fin = models.DateField()
-    montant_total = models.DecimalField(max_digits=10, decimal_places=2)
+    montant_total = models.DecimalField(max_digits=10, decimal_places=2, null=True)
     mode_paiement = models.CharField(max_length=20, choices=MODE_PAIEMENT_CHOICES)
     client = models.ForeignKey(Client, on_delete=models.CASCADE)
     agent = models.ForeignKey(Agent, on_delete=models.SET_NULL, null=True)

@@ -2,7 +2,7 @@ from django.db import models
 from adresse.models import Adresse
 
 class Client(models.Model):
-    cin = models.CharField(max_length=20, unique=True)
+    cin = models.CharField(max_length=20, unique=True, primary_key=True)
     nom = models.CharField(max_length=50)
     prenom = models.CharField(max_length=50)
     email = models.EmailField(unique=True)

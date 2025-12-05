@@ -7,7 +7,7 @@ class Vehicule(models.Model):
         ('Maintenance', 'Maintenance'),
     ]
 
-    matricule = models.CharField(max_length=20, unique=True)
+    matricule = models.CharField(max_length=20, unique=True, primary_key=True)
     marque = models.CharField(max_length=50)
     modele = models.CharField(max_length=50)
     prix_journalier = models.DecimalField(max_digits=8, decimal_places=2)

@@ -22,7 +22,7 @@ urlpatterns = [
     path(r'client/', include('client.urls')),
     path(r'adresse/', include('adresse.urls')),
     path(r'agent/', include('agent.urls')),
-    path(r'vehicule/', include('vehicule.urls')),
-    path(r'contract/', include('contract.urls')),
+    path(r'vehicules/', include('vehicule.urls')),
+    path(r'contracts/', include('contract.urls')),
     path(r'payment/', include('payment.urls'))
 ]
